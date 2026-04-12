@@ -19,18 +19,24 @@ public class OrderEventProducer {
     }
 
     public void sendOrderCreated(OrderCreatedEvent event) {
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE, "order.created", event);
+        rabbitTemplate.convertAndSend(
+                RabbitConfig.ORDER_EXCHANGE,
+                "",
+                event
+        );
+
         log.info("""
 ============================================================
 ORDER SERVICE - EVENT PUBLISHED
 ============================================================
 Exchange      : {}
-Routing Key   : order.created
+Routing Key   : {}
 Order ID      : {}
 Customer      : {}
 ============================================================
 """,
-                RabbitConfig.EXCHANGE,
+                RabbitConfig.ORDER_EXCHANGE,
+                "",
                 event.getOrderId(),
                 event.getCustomerName());
     }

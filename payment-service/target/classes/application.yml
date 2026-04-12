@@ -5,7 +5,7 @@ spring:
   application:
     name: payment-service
   datasource:
-    url: jdbc:mysql://localhost:3306/payment_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/payment_db?createDatabaseIfNotExist=true
     username: root
     password: root123
   jpa:
@@ -17,9 +17,18 @@ spring:
     port: 5672
     username: guest
     password: guest
+    listener:
+      simple:
+        default-requeue-rejected: false
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+
+logging:
+  level:
+    org.springframework.amqp.rabbit.listener.ConditionalRejectingErrorHandler: OFF
+    org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer: ERROR
+    org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter: ERROR

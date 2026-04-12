@@ -1,0 +1,10 @@
+com\example\notificationservice\controller\NotificationController.class
+com\example\notificationservice\service\NotificationService.class
+com\example\notificationservice\event\ShipmentCreatedEvent.class
+com\example\notificationservice\entity\NotificationLog.class
+com\example\notificationservice\consumer\PaymentNotificationConsumer.class
+com\example\notificationservice\NotificationServiceApplication.class
+com\example\notificationservice\config\RabbitConfig.class
+com\example\notificationservice\event\PaymentResultEvent.class
+com\example\notificationservice\consumer\ShipmentNotificationConsumer.class
+com\example\notificationservice\repository\NotificationRepository.class

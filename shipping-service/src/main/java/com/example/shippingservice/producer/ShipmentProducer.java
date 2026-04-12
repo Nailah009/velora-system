@@ -19,18 +19,20 @@ public class ShipmentProducer {
     }
 
     public void sendShipmentCreated(ShipmentCreatedEvent event) {
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE, "shipment.created", event);
+        rabbitTemplate.convertAndSend(RabbitConfig.SHIPMENT_CREATED_EXCHANGE, "", event);
+
         log.info("""
 ============================================================
 SHIPPING SERVICE - SHIPMENT EVENT PUBLISHED
 ============================================================
 Exchange      : {}
-Routing Key   : shipment.created
+Routing Key   : {}
 Order ID      : {}
 Tracking No   : {}
 ============================================================
 """,
-                RabbitConfig.EXCHANGE,
+                RabbitConfig.SHIPMENT_CREATED_EXCHANGE,
+                "",
                 event.getOrderId(),
                 event.getTrackingNumber());
     }

@@ -1,0 +1,14 @@
+com\example\shippingservice\config\RabbitConfig.class
+com\example\shippingservice\controller\ShippingController.class
+com\example\shippingservice\consumer\PaymentSuccessDlqConsumer.class
+com\example\shippingservice\producer\ShipmentProducer.class
+com\example\shippingservice\consumer\PaymentSuccessConsumer.class
+com\example\shippingservice\service\ShippingService.class
+com\example\shippingservice\ShippingServiceApplication.class
+com\example\shippingservice\entity\ShipmentStatus.class
+com\example\shippingservice\event\PaymentResultEvent.class
+com\example\shippingservice\event\ShipmentCreatedEvent.class
+com\example\shippingservice\entity\Shipment.class
+com\example\shippingservice\repository\ShipmentRepository.class
+com\example\shippingservice\controller\GlobalExceptionHandler.class
+com\example\shippingservice\event\OrderItemPayload.class

@@ -19,32 +19,32 @@ public class PaymentResultProducer {
     }
 
     public void sendSuccess(PaymentResultEvent event) {
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE, "payment.success", event);
+        rabbitTemplate.convertAndSend(RabbitConfig.PAYMENT_SUCCESS_EXCHANGE, "", event);
         log.info("""
 ============================================================
 PAYMENT SERVICE - PAYMENT SUCCESS PUBLISHED
 ============================================================
 Exchange      : {}
-Routing Key   : payment.success
+Routing Key   : <fanout>
 Order ID      : {}
 ============================================================
 """,
-                RabbitConfig.EXCHANGE,
+                RabbitConfig.PAYMENT_SUCCESS_EXCHANGE,
                 event.getOrderId());
     }
 
     public void sendFailure(PaymentResultEvent event) {
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE, "payment.failed", event);
+        rabbitTemplate.convertAndSend(RabbitConfig.PAYMENT_FAILED_EXCHANGE, "", event);
         log.info("""
 ============================================================
 PAYMENT SERVICE - PAYMENT FAILED PUBLISHED
 ============================================================
 Exchange      : {}
-Routing Key   : payment.failed
+Routing Key   : <fanout>
 Order ID      : {}
 ============================================================
 """,
-                RabbitConfig.EXCHANGE,
+                RabbitConfig.PAYMENT_FAILED_EXCHANGE,
                 event.getOrderId());
     }
 }

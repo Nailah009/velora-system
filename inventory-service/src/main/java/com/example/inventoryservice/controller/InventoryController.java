@@ -1,9 +1,9 @@
 package com.example.inventoryservice.controller;
 
 import com.example.inventoryservice.dto.InventoryReserveResponse;
+import com.example.inventoryservice.dto.ProductCatalogResponse;
 import com.example.inventoryservice.dto.ProductVariantResponse;
 import com.example.inventoryservice.dto.ReserveInventoryRequest;
-import com.example.inventoryservice.entity.Product;
 import com.example.inventoryservice.entity.ProductVariant;
 import com.example.inventoryservice.service.InventoryService;
 import jakarta.validation.Valid;
@@ -22,7 +22,7 @@ public class InventoryController {
     }
 
     @GetMapping("/products")
-    public List<Product> getProducts() {
+    public List<ProductCatalogResponse> getProducts() {
         return inventoryService.getAllProducts();
     }
 

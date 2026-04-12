@@ -4,6 +4,8 @@ import com.example.inventoryservice.dto.InventoryReserveResponse;
 import com.example.inventoryservice.dto.ProductVariantResponse;
 import com.example.inventoryservice.dto.ReserveInventoryRequest;
 import com.example.inventoryservice.dto.ReserveItemRequest;
+import com.example.inventoryservice.dto.ProductCatalogResponse;
+import com.example.inventoryservice.dto.ProductCatalogVariantResponse;
 import com.example.inventoryservice.entity.Product;
 import com.example.inventoryservice.entity.ProductVariant;
 import com.example.inventoryservice.event.OrderItemPayload;
@@ -14,8 +16,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class InventoryService {
@@ -30,8 +34,67 @@ public class InventoryService {
         this.productVariantRepository = productVariantRepository;
     }
 
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+    public List<ProductCatalogResponse> getAllProducts() {
+        List<Product> products = productRepository.findAll();
+
+        return products.stream().map(product -> {
+            List<ProductVariant> variants = productVariantRepository.findByProductIdOrderBySkuAsc(product.getId());
+
+            BigDecimal startingPrice = variants.stream()
+                    .map(ProductVariant::getPrice)
+                    .filter(Objects::nonNull)
+                    .min(Comparator.naturalOrder())
+                    .orElse(BigDecimal.ZERO);
+
+            BigDecimal highestPrice = variants.stream()
+                    .map(ProductVariant::getPrice)
+                    .filter(Objects::nonNull)
+                    .max(Comparator.naturalOrder())
+                    .orElse(BigDecimal.ZERO);
+
+            int totalAvailableStock = variants.stream()
+                    .map(ProductVariant::getAvailableStock)
+                    .filter(Objects::nonNull)
+                    .mapToInt(Integer::intValue)
+                    .sum();
+
+            List<String> colors = variants.stream()
+                    .map(ProductVariant::getColorName)
+                    .filter(Objects::nonNull)
+                    .distinct()
+                    .toList();
+
+            List<String> sizes = variants.stream()
+                    .map(ProductVariant::getSizeName)
+                    .filter(Objects::nonNull)
+                    .distinct()
+                    .toList();
+
+            List<ProductCatalogVariantResponse> variantResponses = variants.stream().map(variant -> {
+                ProductCatalogVariantResponse item = new ProductCatalogVariantResponse();
+                item.setSku(variant.getSku());
+                item.setColorName(variant.getColorName());
+                item.setSizeName(variant.getSizeName());
+                item.setPrice(variant.getPrice());
+                item.setAvailableStock(variant.getAvailableStock());
+                item.setReservedStock(variant.getReservedStock());
+                return item;
+            }).toList();
+
+            ProductCatalogResponse response = new ProductCatalogResponse();
+            response.setId(product.getId());
+            response.setName(product.getName());
+            response.setBrand(product.getBrand());
+            response.setCategory(product.getCategory());
+            response.setStartingPrice(startingPrice);
+            response.setHighestPrice(highestPrice);
+            response.setTotalAvailableStock(totalAvailableStock);
+            response.setAvailableColors(colors);
+            response.setAvailableSizes(sizes);
+            response.setVariants(variantResponses);
+
+            return response;
+        }).toList();
     }
 
     public List<ProductVariant> getVariantsByProduct(String productId) {
