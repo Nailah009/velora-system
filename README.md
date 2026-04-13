@@ -1,12 +1,5 @@
 # Velora - Enterprise Fashion Order Fulfillment System
 
-Project ini adalah versi pengembangan dari arsitektur lama cinema ticket booking yang sudah diubah domain bisnisnya menjadi **enterprise fashion e-commerce**. Pola implementasi tetap sama:
-- banyak project Spring Boot, bukan satu project jadi satu
-- setiap service punya database sendiri
-- RabbitMQ dipakai untuk komunikasi asynchronous
-- request demo dilakukan lewat Postman
-- hasil request terlihat di terminal console log
-
 ## Daftar service
 1. `shipping-service` (port **8081**)
 2. `inventory-service` (port **8082**)
