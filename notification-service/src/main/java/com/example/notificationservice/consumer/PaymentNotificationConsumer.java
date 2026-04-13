@@ -25,16 +25,21 @@ public class PaymentNotificationConsumer {
 ============================================================
 NOTIFICATION CONSUMER - RECEIVE PAYMENT SUCCESS
 ============================================================
-Queue         : {}
-Order ID      : {}
-Customer      : {}
-Amount        : {}
+Queue          : {}
+Order ID       : {}
+Customer       : {}
+Email          : {}
+Amount         : {}
+Payment Status : {}
 ============================================================
 """,
                 RabbitConfig.PAYMENT_SUCCESS_QUEUE,
                 event.getOrderId(),
                 event.getCustomerName(),
-                event.getAmount());
+                event.getEmail(),
+                event.getAmount(),
+                event.getPaymentStatus());
+
         notificationService.savePaymentNotification(event);
     }
 
@@ -44,16 +49,21 @@ Amount        : {}
 ============================================================
 NOTIFICATION CONSUMER - RECEIVE PAYMENT FAILED
 ============================================================
-Queue         : {}
-Order ID      : {}
-Customer      : {}
-Reason        : {}
+Queue          : {}
+Order ID       : {}
+Customer       : {}
+Email          : {}
+Reason         : {}
+Payment Status : {}
 ============================================================
 """,
                 RabbitConfig.PAYMENT_FAILED_QUEUE,
                 event.getOrderId(),
                 event.getCustomerName(),
-                event.getReason());
+                event.getEmail(),
+                event.getReason(),
+                event.getPaymentStatus());
+
         notificationService.savePaymentNotification(event);
     }
 }
