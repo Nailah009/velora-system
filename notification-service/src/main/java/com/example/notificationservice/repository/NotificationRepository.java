@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface NotificationRepository extends JpaRepository<NotificationLog, String> {
-    List<NotificationLog> findByReferenceId(String referenceId);
+    List<NotificationLog> findByOrderIdOrderByCreatedAtAsc(String orderId);
 }

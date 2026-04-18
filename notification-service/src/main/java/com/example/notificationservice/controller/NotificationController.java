@@ -2,7 +2,10 @@ package com.example.notificationservice.controller;
 
 import com.example.notificationservice.entity.NotificationLog;
 import com.example.notificationservice.service.NotificationService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -16,8 +19,8 @@ public class NotificationController {
         this.notificationService = notificationService;
     }
 
-    @GetMapping("/reference/{referenceId}")
-    public List<NotificationLog> getByReferenceId(@PathVariable String referenceId) {
-        return notificationService.findByReferenceId(referenceId);
+    @GetMapping("/order/{orderId}")
+    public List<NotificationLog> getByOrderId(@PathVariable String orderId) {
+        return notificationService.findByOrderId(orderId);
     }
 }

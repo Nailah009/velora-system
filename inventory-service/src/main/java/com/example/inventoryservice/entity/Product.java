@@ -1,8 +1,14 @@
 package com.example.inventoryservice.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -13,6 +19,10 @@ public class Product {
     private String name;
     private String brand;
     private String category;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = false)
+    private List<ProductVariant> variants = new ArrayList<>();
 
     public Product() {
     }
@@ -32,4 +42,6 @@ public class Product {
     public void setBrand(String brand) { this.brand = brand; }
     public String getCategory() { return category; }
     public void setCategory(String category) { this.category = category; }
+    public List<ProductVariant> getVariants() { return variants; }
+    public void setVariants(List<ProductVariant> variants) { this.variants = variants; }
 }
