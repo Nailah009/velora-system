@@ -27,14 +27,19 @@ NOTIFICATION CONSUMER - RECEIVE SHIPMENT CREATED
 ============================================================
 Queue         : {}
 Order ID      : {}
+Customer      : {}
+Email         : {}
 Tracking No   : {}
 Courier       : {}
 ============================================================
 """,
                 RabbitConfig.SHIPMENT_CREATED_QUEUE,
                 event.getOrderId(),
+                event.getCustomerName(),
+                event.getEmail(),
                 event.getTrackingNumber(),
                 event.getCourier());
+
         notificationService.saveShipmentNotification(event);
     }
 }

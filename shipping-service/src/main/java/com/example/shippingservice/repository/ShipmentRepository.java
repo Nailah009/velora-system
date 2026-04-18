@@ -3,8 +3,8 @@ package com.example.shippingservice.repository;
 import com.example.shippingservice.entity.Shipment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+import java.util.Optional;
 
 public interface ShipmentRepository extends JpaRepository<Shipment, String> {
-    List<Shipment> findByOrderId(String orderId);
+    Optional<Shipment> findByOrderId(String orderId);
 }

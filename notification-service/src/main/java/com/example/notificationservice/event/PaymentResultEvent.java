@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PaymentResultEvent {
 
+    private String paymentId;
     private String orderId;
     private String customerName;
     private String email;
@@ -18,6 +19,8 @@ public class PaymentResultEvent {
     public PaymentResultEvent() {
     }
 
+    public String getPaymentId() { return paymentId; }
+    public void setPaymentId(String paymentId) { this.paymentId = paymentId; }
     public String getOrderId() {
         return orderId;
     }
