@@ -1,0 +1,47 @@
+package com.example.inventoryservice.entity;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "products")
+public class Product {
+
+    @Id
+    private String id;
+    private String name;
+    private String brand;
+    private String category;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = false)
+    private List<ProductVariant> variants = new ArrayList<>();
+
+    public Product() {
+    }
+
+    public Product(String id, String name, String brand, String category) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+        this.category = category;
+    }
+
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
+    public List<ProductVariant> getVariants() { return variants; }
+    public void setVariants(List<ProductVariant> variants) { this.variants = variants; }
+}
