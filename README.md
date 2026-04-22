@@ -123,22 +123,6 @@ Setiap service telah dilengkapi dengan dokumentasi OpenAPI dan dapat diakses mel
 
 ---
 
-## Struktur Folder
-
-```bash
-velora-system/
-├── inventory-service/
-├── order-service/
-├── payment-service/
-├── shipping-service/
-├── notification-service/
-├── docker-compose.yml
-├── README.md
-└── RUN-VELORA.md
-```
-
----
-
 ## Endpoint Utama
 
 ### Inventory Service
@@ -233,7 +217,3 @@ Jika flow berhasil, maka:
 - Disarankan menggunakan Java 17 atau versi yang kompatibel
 
 ---
-
-## Author
-
-Developed for enterprise application integration and microservices simulation using Kafka and OpenAPI.

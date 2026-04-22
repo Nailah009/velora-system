@@ -1,12 +1,9 @@
 # RUN VELORA
-
-Panduan ini menjelaskan langkah menjalankan Velora System dari nol sampai siap diuji.
-
 ---
 
 ## 1. Requirement
 
-Pastikan perangkat kamu sudah memiliki:
+Persiapan perangkat: 
 - Java 17+
 - Maven
 - Docker Desktop
@@ -22,19 +19,7 @@ docker compose version
 
 ---
 
-## 2. Clone Repository
-
-```bash
-git clone https://github.com/Nailah009/velora-system.git
-cd velora-system
-git checkout velora-system
-```
-
-Jika repository sudah ada di laptopmu, cukup pindah ke folder project lalu pastikan branch yang dipakai adalah `velora-system`.
-
----
-
-## 3. Jalankan Infrastruktur
+## 2. Jalankan Infrastruktur
 
 Dari root project, jalankan:
 
@@ -55,7 +40,7 @@ docker ps
 
 ---
 
-## 4. Jalankan Semua Service
+## 3. Jalankan Semua Service
 
 Buka terminal terpisah untuk masing-masing service.
 
@@ -98,7 +83,7 @@ Urutan aman menjalankan service:
 
 ---
 
-## 5. Cek OpenAPI / Swagger UI
+## 4. Cek OpenAPI / Swagger UI
 
 Jika service berhasil berjalan, buka Swagger UI masing-masing service:
 
@@ -117,7 +102,7 @@ Cek juga OpenAPI JSON:
 
 ---
 
-## 6. Testing Flow
+## 5. Testing Flow
 
 ### A. Cek Produk
 Gunakan Swagger UI inventory-service atau browser:
@@ -181,7 +166,7 @@ GET http://localhost:8085/api/notifications/order/{orderId}
 
 ---
 
-## 7. Hasil yang Diharapkan
+## 6. Hasil yang Diharapkan
 
 Jika flow berhasil:
 - order berhasil dibuat
@@ -192,7 +177,7 @@ Jika flow berhasil:
 
 ---
 
-## 8. Test Skenario Gagal
+## 7. Test Skenario Gagal
 
 Untuk simulasi payment gagal, gunakan request order dengan nilai `paymentMethod` yang memicu failure sesuai implementasi service kamu.
 
@@ -204,9 +189,9 @@ Setelah itu cek:
 
 ---
 
-## 9. Jika Kafka Tidak Terkoneksi
+## 8. Jika Kafka Tidak Terkoneksi
 
-Kalau service gagal connect ke Kafka:
+Jika service gagal connect ke Kafka:
 1. cek container Kafka dengan `docker ps`
 2. cek log Kafka:
    ```bash
@@ -220,7 +205,7 @@ Kalau service gagal connect ke Kafka:
 
 ---
 
-## 10. Jika Swagger Tidak Muncul
+## 9. Jika Swagger Tidak Muncul
 
 Pastikan:
 - dependency `springdoc-openapi-starter-webmvc-ui` sudah ditambahkan
@@ -229,8 +214,3 @@ Pastikan:
 
 ---
 
-## 11. Catatan Tambahan
-
-- Jangan push folder `target/` ke GitHub
-- Tambahkan `.gitignore` untuk mengabaikan file hasil build
-- Disarankan menggunakan branch `velora-system` untuk development
