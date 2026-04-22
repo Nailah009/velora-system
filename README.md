@@ -1,164 +1,239 @@
-# Velora - Enterprise Fashion Order Fulfillment System
+# Velora System
 
-## Daftar service
-1. `shipping-service` (port **8081**)
-2. `inventory-service` (port **8082**)
-3. `order-service` (port **8083**)
-4. `payment-service` (port **8084**)
-5. `notification-service` (port **8085**)
+Velora System adalah aplikasi **enterprise fashion e-commerce** berbasis **microservices** yang dibangun menggunakan **Spring Boot**, **Apache Kafka**, dan **MySQL**. Sistem ini dirancang untuk mensimulasikan alur pemrosesan order secara **asynchronous** antar layanan, mulai dari pembuatan order, pembayaran, pengiriman, hingga notifikasi.
 
-## Arsitektur singkat
-### Synchronous REST
-- `order-service` memanggil `inventory-service` untuk cek varian produk
-- `order-service` memanggil `inventory-service` untuk reserve stock
+Project ini juga telah dilengkapi dengan **OpenAPI documentation** menggunakan **Swagger UI** pada setiap service agar endpoint REST dapat didokumentasikan dan diuji dengan lebih mudah.
 
-### Asynchronous Apache Kafka
-- `order-service` publish event `order.created`
-- `payment-service` consume `order.created`
-- `payment-service` publish `payment.success` / `payment.failed`
-- `inventory-service`, `order-service`, `shipping-service`, dan `notification-service` consume hasil payment
-- `shipping-service` publish `shipment.created`
-- `order-service` dan `notification-service` consume `shipment.created`
+---
 
-## Infrastruktur
-Folder ini juga menyediakan:
-- `docker-compose.yml`
-- `mysql-init/01-create-dbs.sql`
-- `postman/Velora-EAI.postman_collection.json`
-- `RUN-VELORA.md`
+## Tech Stack
 
-## Requirement
-- Java 17
+- Java 17+
+- Spring Boot 3.x
+- Spring Web
+- Spring Data JPA
+- Apache Kafka
+- MySQL 8
+- Docker Compose
 - Maven
-- Docker Desktop
+- OpenAPI / Swagger UI
 
-## 1. Jalankan Apache Kafka + MySQL
-Dari root folder:
+---
+
+## Arsitektur Microservices
+
+Project ini terdiri dari 5 service utama:
+
+### 1. Inventory Service
+Berfungsi untuk:
+- menampilkan daftar produk
+- menampilkan detail varian produk
+- melakukan reserve stok saat order dibuat
+
+Port: `8082`
+
+### 2. Order Service
+Berfungsi untuk:
+- membuat order
+- menampilkan detail order
+- mengirim event order ke Kafka
+- memperbarui status order berdasarkan event dari service lain
+
+Port: `8083`
+
+### 3. Payment Service
+Berfungsi untuk:
+- menerima event order
+- memproses pembayaran
+- menyimpan data payment
+- mengirim event payment success atau payment failed
+
+Port: `8084`
+
+### 4. Shipping Service
+Berfungsi untuk:
+- menerima event payment success
+- membuat data shipment
+- mengirim event shipment created
+
+Port: `8081`
+
+### 5. Notification Service
+Berfungsi untuk:
+- menerima event payment success
+- menerima event payment failed
+- menerima event shipment created
+- menyimpan log notifikasi
+
+Port: `8085`
+
+---
+
+## Alur Sistem
+
+Alur bisnis utama pada Velora adalah sebagai berikut:
+
+1. User membuat order melalui `order-service`
+2. `order-service` memvalidasi produk ke `inventory-service`
+3. `inventory-service` melakukan reserve stok
+4. `order-service` menyimpan order lalu publish event ke Kafka
+5. `payment-service` consume event order dan memproses pembayaran
+6. Jika pembayaran berhasil, `payment-service` publish event payment success
+7. `shipping-service` consume payment success lalu membuat shipment
+8. `shipping-service` publish event shipment created
+9. `notification-service` consume event untuk mencatat notifikasi
+10. `order-service` memperbarui status order berdasarkan event payment dan shipment
+
+---
+
+## Kafka Event Flow
+
+Project ini menggunakan **Apache Kafka** untuk komunikasi asynchronous antar microservices.
+
+### Topic yang digunakan
+- `velora.order.topic`
+- `velora.payment.success.topic`
+- `velora.payment.failed.topic`
+- `velora.shipment.created.topic`
+
+### Dead Letter / Retry Topic
+Beberapa service juga menggunakan retry / dead letter topic untuk simulasi failure handling, seperti:
+- `payment.order.created.dlq`
+- `shipping.payment.success.dlq`
+
+---
+
+## OpenAPI / Swagger UI
+
+Setiap service telah dilengkapi dengan dokumentasi OpenAPI dan dapat diakses melalui Swagger UI.
+
+### Swagger UI
+- Inventory Service: `http://localhost:8082/swagger-ui/index.html`
+- Order Service: `http://localhost:8083/swagger-ui/index.html`
+- Payment Service: `http://localhost:8084/swagger-ui/index.html`
+- Shipping Service: `http://localhost:8081/swagger-ui/index.html`
+- Notification Service: `http://localhost:8085/swagger-ui/index.html`
+
+### OpenAPI JSON
+- Inventory Service: `http://localhost:8082/v3/api-docs`
+- Order Service: `http://localhost:8083/v3/api-docs`
+- Payment Service: `http://localhost:8084/v3/api-docs`
+- Shipping Service: `http://localhost:8081/v3/api-docs`
+- Notification Service: `http://localhost:8085/v3/api-docs`
+
+---
+
+## Struktur Folder
+
 ```bash
-docker compose up -d
+velora-system/
+├── inventory-service/
+├── order-service/
+├── payment-service/
+├── shipping-service/
+├── notification-service/
+├── docker-compose.yml
+├── README.md
+└── RUN-VELORA.md
 ```
 
-Apache Kafka UI:
-- http://localhost:15672
-- username: `guest`
-- password: `guest`
+---
 
-MySQL:
-- host: `localhost`
-- port: `3306`
-- user: `root`
-- password: `root123`
+## Endpoint Utama
 
-## 2. Jalankan semua service
-Buka terminal terpisah untuk masing-masing service:
+### Inventory Service
+- `GET /api/products`
+- `GET /api/products/{productId}/variants`
+- `GET /api/variants/{sku}`
+- `POST /api/inventory/reserve`
 
-### shipping-service
-```bash
-cd shipping-service
-mvn spring-boot:run
+### Order Service
+- `POST /api/orders`
+- `GET /api/orders/{orderId}`
+
+### Payment Service
+- `GET /api/payments/order/{orderId}`
+
+### Shipping Service
+- `GET /api/shipments/order/{orderId}`
+
+### Notification Service
+- `GET /api/notifications/order/{orderId}`
+
+---
+
+## Contoh Testing Flow
+
+### 1. Lihat daftar produk
+```http
+GET http://localhost:8082/api/products
 ```
 
-### inventory-service
-```bash
-cd inventory-service
-mvn spring-boot:run
+### 2. Buat order
+```http
+POST http://localhost:8083/api/orders
+Content-Type: application/json
 ```
-
-### order-service
-```bash
-cd order-service
-mvn spring-boot:run
-```
-
-### payment-service
-```bash
-cd payment-service
-mvn spring-boot:run
-```
-
-### notification-service
-```bash
-cd notification-service
-mvn spring-boot:run
-```
-
-## 3. Flow testing via Postman
-### A. Lihat produk
-`GET http://localhost:8082/api/products`
-
-### B. Lihat varian produk
-`GET http://localhost:8082/api/products/PRD-001/variants`
-
-### C. Detail satu SKU
-`GET http://localhost:8082/api/variants/VLR-TSH-BLK-M`
-
-### D. Buat order sukses
-`POST http://localhost:8083/api/orders`
 
 Body:
 ```json
 {
-  "customerName": "Selvya",
-  "email": "selvya@mail.com",
-  "shippingAddress": "Jl. Solo Baru No. 21, Sukoharjo",
-  "paymentMethod": "QRIS",
+  "customerName": "Nailah",
+  "email": "nailah@gmail.com",
+  "shippingAddress": "Jl. Solo Baru No. 5, Kota Solo",
+  "paymentMethod": "BCA",
   "items": [
     {
       "sku": "VLR-TSH-BLK-M",
-      "quantity": 2
-    },
-    {
-      "sku": "VLR-HOD-GRY-L",
       "quantity": 1
     }
   ]
 }
 ```
 
-### E. Cek status order
-`GET http://localhost:8083/api/orders/{orderId}`
-
-### F. Cek data payment
-`GET http://localhost:8084/api/payments/order/{orderId}`
-
-### G. Cek shipment
-`GET http://localhost:8081/api/shipments/order/{orderId}`
-
-### H. Cek notifikasi
-`GET http://localhost:8085/api/notifications/reference/{orderId}`
-
-## Testing payment gagal
-Gunakan body ini:
-```json
-{
-  "customerName": "Dimas",
-  "email": "dimas@mail.com",
-  "shippingAddress": "Jl. Veteran No. 8, Surakarta",
-  "paymentMethod": "FAIL",
-  "items": [
-    {
-      "sku": "VLR-TSH-WHT-L",
-      "quantity": 1
-    }
-  ]
-}
+### 3. Cek order
+```http
+GET http://localhost:8083/api/orders/{orderId}
 ```
 
-Hasil:
-- payment akan gagal
-- order status jadi `PAYMENT_FAILED`
-- stok yang sudah di-reserve akan di-release oleh `inventory-service`
-- tidak ada shipment dibuat
-- notification akan mencatat pesan gagal
+### 4. Cek payment
+```http
+GET http://localhost:8084/api/payments/order/{orderId}
+```
 
-## Database yang dipakai
-- `shipping_db`
-- `inventory_db`
-- `order_db`
-- `payment_db`
-- `notification_db`
+### 5. Cek shipment
+```http
+GET http://localhost:8081/api/shipments/order/{orderId}
+```
 
-## Catatan penting
-- `inventory-service` di-seed otomatis lewat `data.sql`
-- `order-service` adalah pintu masuk utama untuk demo di Postman
-- `paymentMethod = FAIL` dipakai untuk simulasi gagal saat demo
+### 6. Cek notification
+```http
+GET http://localhost:8085/api/notifications/order/{orderId}
+```
+
+---
+
+## Hasil Flow yang Diharapkan
+
+Jika flow berhasil, maka:
+- order berhasil dibuat
+- payment berhasil diproses
+- shipment berhasil dibuat
+- notification tersimpan
+- status order berubah menjadi `READY_TO_SHIP`
+
+---
+
+## Catatan
+
+- Project ini menggunakan komunikasi **REST + Kafka**
+- REST digunakan untuk komunikasi synchronous, misalnya validasi produk dan reserve stok
+- Kafka digunakan untuk komunikasi asynchronous antar microservice
+- Swagger UI digunakan untuk dokumentasi dan pengujian endpoint REST
+- Disarankan menggunakan Java 17 atau versi yang kompatibel
+
+---
+
+## Author
+
+Developed for enterprise application integration and microservices simulation using Kafka and OpenAPI.
