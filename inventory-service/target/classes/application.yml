@@ -21,7 +21,7 @@ spring:
     consumer:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
       properties:
         spring.json.trusted.packages: "*"
     producer:

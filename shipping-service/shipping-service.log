@@ -1,0 +1,451 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.example:shipping-service >--------------------
+[INFO] Building shipping-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ shipping-service ---
+[INFO] Deleting /Users/lfrd/Documents/velora-system/shipping-service/target
+[INFO] 
+[INFO] >>> spring-boot:3.2.5:run (default-cli) > test-compile @ shipping-service >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ shipping-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ shipping-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 14 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ shipping-service ---
+[INFO] skip non existing resourceDirectory /Users/lfrd/Documents/velora-system/shipping-service/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ shipping-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.5:run (default-cli) < test-compile @ shipping-service <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.5:run (default-cli) @ shipping-service ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-04-22T20:10:49.741+07:00  INFO 75515 --- [shipping-service] [           main] c.e.s.ShippingServiceApplication         : Starting ShippingServiceApplication using Java 25.0.2 with PID 75515 (/Users/lfrd/Documents/velora-system/shipping-service/target/classes started by lfrd in /Users/lfrd/Documents/velora-system/shipping-service)
+2026-04-22T20:10:49.743+07:00  INFO 75515 --- [shipping-service] [           main] c.e.s.ShippingServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-22T20:10:50.268+07:00  INFO 75515 --- [shipping-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-22T20:10:50.297+07:00  INFO 75515 --- [shipping-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/Users/lfrd/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.20/tomcat-embed-core-10.1.20.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-04-22T20:10:50.717+07:00  INFO 75515 --- [shipping-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-04-22T20:10:50.723+07:00  INFO 75515 --- [shipping-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-22T20:10:50.723+07:00  INFO 75515 --- [shipping-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-22T20:10:50.750+07:00  INFO 75515 --- [shipping-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-22T20:10:50.751+07:00  INFO 75515 --- [shipping-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 976 ms
+2026-04-22T20:10:50.911+07:00  INFO 75515 --- [shipping-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-22T20:10:50.935+07:00  INFO 75515 --- [shipping-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-04-22T20:10:50.959+07:00  INFO 75515 --- [shipping-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-22T20:10:51.079+07:00  INFO 75515 --- [shipping-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-22T20:10:51.098+07:00  INFO 75515 --- [shipping-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-22T20:10:51.192+07:00  INFO 75515 --- [shipping-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@eb1d475
+2026-04-22T20:10:51.193+07:00  INFO 75515 --- [shipping-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-22T20:10:51.661+07:00  INFO 75515 --- [shipping-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-22T20:10:51.690+07:00  INFO 75515 --- [shipping-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-22T20:10:51.966+07:00  WARN 75515 --- [shipping-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-22T20:10:52.350+07:00  INFO 75515 --- [shipping-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-04-22T20:10:52.435+07:00  INFO 75515 --- [shipping-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-04-22T20:10:52.457+07:00  INFO 75515 --- [shipping-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-shipping-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = shipping-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2026-04-22T20:10:52.537+07:00  INFO 75515 --- [shipping-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages]' were supplied but are not used yet.
+2026-04-22T20:10:52.538+07:00  INFO 75515 --- [shipping-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.2
+2026-04-22T20:10:52.538+07:00  INFO 75515 --- [shipping-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: c4deed513057c94e
+2026-04-22T20:10:52.538+07:00  INFO 75515 --- [shipping-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1776863452537
+2026-04-22T20:10:52.544+07:00  INFO 75515 --- [shipping-service] [           main] fkaConsumerFactory$ExtendedKafkaConsumer : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Subscribed to topic(s): velora.payment.success.topic
+2026-04-22T20:10:52.549+07:00  INFO 75515 --- [shipping-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-shipping-service-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = shipping-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2026-04-22T20:10:52.552+07:00  INFO 75515 --- [shipping-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages]' were supplied but are not used yet.
+2026-04-22T20:10:52.553+07:00  INFO 75515 --- [shipping-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.2
+2026-04-22T20:10:52.553+07:00  INFO 75515 --- [shipping-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: c4deed513057c94e
+2026-04-22T20:10:52.553+07:00  INFO 75515 --- [shipping-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1776863452552
+2026-04-22T20:10:52.555+07:00  INFO 75515 --- [shipping-service] [           main] fkaConsumerFactory$ExtendedKafkaConsumer : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Subscribed to topic(s): shipping.payment.success.dlq
+2026-04-22T20:10:52.566+07:00  INFO 75515 --- [shipping-service] [           main] c.e.s.ShippingServiceApplication         : Started ShippingServiceApplication in 3.096 seconds (process running for 3.285)
+2026-04-22T20:10:52.692+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Cluster ID: NaeYGMN1Q7CXolG6VdH_gA
+2026-04-22T20:10:52.692+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Cluster ID: NaeYGMN1Q7CXolG6VdH_gA
+2026-04-22T20:10:52.692+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-04-22T20:10:52.692+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-04-22T20:10:52.694+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] (Re-)joining group
+2026-04-22T20:10:52.694+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] (Re-)joining group
+2026-04-22T20:10:52.705+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Request joining group due to: need to re-join with the given member-id: consumer-shipping-service-2-2904994c-57f7-4849-85b5-9996b801b9f7
+2026-04-22T20:10:52.705+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Request joining group due to: need to re-join with the given member-id: consumer-shipping-service-1-fc9a5f58-b582-44be-bee0-5c3b067b0ece
+2026-04-22T20:10:52.705+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2026-04-22T20:10:52.705+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] (Re-)joining group
+2026-04-22T20:10:52.706+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2026-04-22T20:10:52.706+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] (Re-)joining group
+2026-04-22T20:11:20.112+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Successfully joined group with generation Generation{generationId=2, memberId='consumer-shipping-service-2-2904994c-57f7-4849-85b5-9996b801b9f7', protocol='range'}
+2026-04-22T20:11:20.112+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Successfully joined group with generation Generation{generationId=2, memberId='consumer-shipping-service-1-fc9a5f58-b582-44be-bee0-5c3b067b0ece', protocol='range'}
+2026-04-22T20:11:20.135+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Finished assignment for group at generation 2: {consumer-shipping-service-1-fc9a5f58-b582-44be-bee0-5c3b067b0ece=Assignment(partitions=[velora.payment.success.topic-0]), consumer-shipping-service-2-2904994c-57f7-4849-85b5-9996b801b9f7=Assignment(partitions=[shipping.payment.success.dlq-0])}
+2026-04-22T20:11:20.144+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Successfully synced group in generation Generation{generationId=2, memberId='consumer-shipping-service-2-2904994c-57f7-4849-85b5-9996b801b9f7', protocol='range'}
+2026-04-22T20:11:20.144+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Successfully synced group in generation Generation{generationId=2, memberId='consumer-shipping-service-1-fc9a5f58-b582-44be-bee0-5c3b067b0ece', protocol='range'}
+2026-04-22T20:11:20.145+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Notifying assignor about the new Assignment(partitions=[velora.payment.success.topic-0])
+2026-04-22T20:11:20.145+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Notifying assignor about the new Assignment(partitions=[shipping.payment.success.dlq-0])
+2026-04-22T20:11:20.146+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Adding newly assigned partitions: shipping.payment.success.dlq-0
+2026-04-22T20:11:20.146+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Adding newly assigned partitions: velora.payment.success.topic-0
+2026-04-22T20:11:20.154+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Found no committed offset for partition shipping.payment.success.dlq-0
+2026-04-22T20:11:20.154+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Found no committed offset for partition velora.payment.success.topic-0
+2026-04-22T20:11:20.161+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Resetting offset for partition velora.payment.success.topic-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-04-22T20:11:20.161+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : shipping-service: partitions assigned: [velora.payment.success.topic-0]
+2026-04-22T20:11:20.161+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Resetting offset for partition shipping.payment.success.dlq-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-04-22T20:11:20.161+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : shipping-service: partitions assigned: [shipping.payment.success.dlq-0]
+============================================================
+SHIPPING CONSUMER - RECEIVE PAYMENT SUCCESS
+============================================================
+Queue          : velora.payment.success.topic
+Order ID       : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Customer       : Selvya
+Payment Status : SUCCESS
+Address        : Jl. Solo Baru No. 21, Sukoharjo
+============================================================
+2026-04-22T20:11:20.323+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] c.e.s.service.ShippingService            : ============================================================
+SHIPPING SERVICE - SHIPMENT SAVED
+============================================================
+Shipment ID   : 5c58cb85-b847-4047-9af0-613db1c95e8f
+Order ID      : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Recipient     : Selvya
+Courier       : JNE
+Tracking No   : VLR72A60BBEDE
+Status        : READY_TO_SHIP
+============================================================
+
+2026-04-22T20:11:20.327+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-04-22T20:11:20.332+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2026-04-22T20:11:20.337+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.2
+2026-04-22T20:11:20.337+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: c4deed513057c94e
+2026-04-22T20:11:20.337+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1776863480337
+2026-04-22T20:11:20.344+07:00  INFO 75515 --- [shipping-service] [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: NaeYGMN1Q7CXolG6VdH_gA
+2026-04-22T20:11:20.345+07:00  INFO 75515 --- [shipping-service] [ad | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1] ProducerId set to 2 with epoch 0
+2026-04-22T20:11:20.353+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] c.e.s.producer.ShipmentProducer          : ============================================================
+SHIPPING SERVICE - SHIPMENT EVENT PUBLISHED
+============================================================
+Exchange      : velora.shipment.created.topic
+Routing Key   : 
+Order ID      : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Tracking No   : VLR72A60BBEDE
+============================================================
+
+============================================================
+SHIPPING CONSUMER - RECEIVE PAYMENT SUCCESS
+============================================================
+Queue          : velora.payment.success.topic
+Order ID       : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Customer       : Selvya
+Payment Status : SUCCESS
+Address        : Jl. Solo Baru No. 21, Sukoharjo
+============================================================
+2026-04-22T20:11:20.366+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] c.e.s.service.ShippingService            : ============================================================
+SHIPPING SERVICE - SHIPMENT SAVED
+============================================================
+Shipment ID   : 1002a7c3-7676-4a8a-807e-c4416576dabb
+Order ID      : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Recipient     : Selvya
+Courier       : JNE
+Tracking No   : VLR0DCBEE0D91
+Status        : READY_TO_SHIP
+============================================================
+
+2026-04-22T20:11:20.366+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] c.e.s.producer.ShipmentProducer          : ============================================================
+SHIPPING SERVICE - SHIPMENT EVENT PUBLISHED
+============================================================
+Exchange      : velora.shipment.created.topic
+Routing Key   : 
+Order ID      : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Tracking No   : VLR0DCBEE0D91
+============================================================
+
+2026-04-22T20:13:56.174+07:00  INFO 75515 --- [shipping-service] [nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-22T20:13:56.174+07:00  INFO 75515 --- [shipping-service] [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-22T20:13:56.175+07:00  INFO 75515 --- [shipping-service] [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-22T20:19:52.732+07:00  INFO 75515 --- [shipping-service] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-shipping-service-2, groupId=shipping-service] Node -1 disconnected.
+2026-04-22T20:19:52.915+07:00  INFO 75515 --- [shipping-service] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-shipping-service-1, groupId=shipping-service] Node -1 disconnected.

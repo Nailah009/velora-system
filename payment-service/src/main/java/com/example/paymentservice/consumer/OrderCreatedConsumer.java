@@ -17,7 +17,7 @@ public class OrderCreatedConsumer {
         this.paymentService = paymentService;
     }
 
-    @KafkaListener(topics = KafkaConfig.ORDER_CREATED_TOPIC, groupId = "${spring.application.name}")
+    @KafkaListener(topics = KafkaConfig.ORDER_TOPIC, groupId = "${spring.application.name}")
     public void handleOrderCreated(OrderCreatedEvent event) {
         try {
             System.out.println("============================================================");

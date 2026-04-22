@@ -1,0 +1,510 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.example:notification-service >------------------
+[INFO] Building notification-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ notification-service ---
+[INFO] Deleting /Users/lfrd/Documents/velora-system/notification-service/target
+[INFO] 
+[INFO] >>> spring-boot:3.2.5:run (default-cli) > test-compile @ notification-service >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ notification-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ notification-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 10 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ notification-service ---
+[INFO] skip non existing resourceDirectory /Users/lfrd/Documents/velora-system/notification-service/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ notification-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.5:run (default-cli) < test-compile @ notification-service <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.5:run (default-cli) @ notification-service ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-04-22T20:10:49.729+07:00  INFO 75516 --- [notification-service] [           main] c.e.n.NotificationServiceApplication     : Starting NotificationServiceApplication using Java 25.0.2 with PID 75516 (/Users/lfrd/Documents/velora-system/notification-service/target/classes started by lfrd in /Users/lfrd/Documents/velora-system/notification-service)
+2026-04-22T20:10:49.730+07:00  INFO 75516 --- [notification-service] [           main] c.e.n.NotificationServiceApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-04-22T20:10:50.269+07:00  INFO 75516 --- [notification-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-22T20:10:50.296+07:00  INFO 75516 --- [notification-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 1 JPA repository interface.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/Users/lfrd/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.20/tomcat-embed-core-10.1.20.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-04-22T20:10:50.712+07:00  INFO 75516 --- [notification-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2026-04-22T20:10:50.718+07:00  INFO 75516 --- [notification-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-22T20:10:50.718+07:00  INFO 75516 --- [notification-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-22T20:10:50.742+07:00  INFO 75516 --- [notification-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-22T20:10:50.743+07:00  INFO 75516 --- [notification-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 988 ms
+2026-04-22T20:10:50.900+07:00  INFO 75516 --- [notification-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-22T20:10:50.925+07:00  INFO 75516 --- [notification-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-04-22T20:10:50.949+07:00  INFO 75516 --- [notification-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-22T20:10:51.073+07:00  INFO 75516 --- [notification-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-22T20:10:51.088+07:00  INFO 75516 --- [notification-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-22T20:10:51.184+07:00  INFO 75516 --- [notification-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a62d697
+2026-04-22T20:10:51.185+07:00  INFO 75516 --- [notification-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-22T20:10:51.647+07:00  INFO 75516 --- [notification-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-22T20:10:51.677+07:00  INFO 75516 --- [notification-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-22T20:10:51.912+07:00  WARN 75516 --- [notification-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-22T20:10:52.341+07:00  INFO 75516 --- [notification-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-04-22T20:10:52.423+07:00  INFO 75516 --- [notification-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path ''
+2026-04-22T20:10:52.446+07:00  INFO 75516 --- [notification-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2026-04-22T20:10:52.536+07:00  INFO 75516 --- [notification-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages]' were supplied but are not used yet.
+2026-04-22T20:10:52.537+07:00  INFO 75516 --- [notification-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.2
+2026-04-22T20:10:52.537+07:00  INFO 75516 --- [notification-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: c4deed513057c94e
+2026-04-22T20:10:52.537+07:00  INFO 75516 --- [notification-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1776863452536
+2026-04-22T20:10:52.543+07:00  INFO 75516 --- [notification-service] [           main] fkaConsumerFactory$ExtendedKafkaConsumer : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Subscribed to topic(s): velora.shipment.created.topic
+2026-04-22T20:10:52.547+07:00  INFO 75516 --- [notification-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-service-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2026-04-22T20:10:52.550+07:00  INFO 75516 --- [notification-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages]' were supplied but are not used yet.
+2026-04-22T20:10:52.550+07:00  INFO 75516 --- [notification-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.2
+2026-04-22T20:10:52.550+07:00  INFO 75516 --- [notification-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: c4deed513057c94e
+2026-04-22T20:10:52.550+07:00  INFO 75516 --- [notification-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1776863452550
+2026-04-22T20:10:52.553+07:00  INFO 75516 --- [notification-service] [           main] fkaConsumerFactory$ExtendedKafkaConsumer : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Subscribed to topic(s): velora.payment.success.topic
+2026-04-22T20:10:52.554+07:00  INFO 75516 --- [notification-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-service-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2026-04-22T20:10:52.558+07:00  INFO 75516 --- [notification-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages]' were supplied but are not used yet.
+2026-04-22T20:10:52.559+07:00  INFO 75516 --- [notification-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.2
+2026-04-22T20:10:52.559+07:00  INFO 75516 --- [notification-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: c4deed513057c94e
+2026-04-22T20:10:52.559+07:00  INFO 75516 --- [notification-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1776863452559
+2026-04-22T20:10:52.562+07:00  INFO 75516 --- [notification-service] [           main] fkaConsumerFactory$ExtendedKafkaConsumer : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Subscribed to topic(s): velora.payment.failed.topic
+2026-04-22T20:10:52.573+07:00  INFO 75516 --- [notification-service] [           main] c.e.n.NotificationServiceApplication     : Started NotificationServiceApplication in 3.104 seconds (process running for 3.291)
+2026-04-22T20:10:52.694+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Cluster ID: NaeYGMN1Q7CXolG6VdH_gA
+2026-04-22T20:10:52.694+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Cluster ID: NaeYGMN1Q7CXolG6VdH_gA
+2026-04-22T20:10:52.694+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Cluster ID: NaeYGMN1Q7CXolG6VdH_gA
+2026-04-22T20:10:52.695+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-04-22T20:10:52.695+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-04-22T20:10:52.695+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-04-22T20:10:52.696+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] (Re-)joining group
+2026-04-22T20:10:52.696+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] (Re-)joining group
+2026-04-22T20:10:52.696+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] (Re-)joining group
+2026-04-22T20:10:52.706+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Request joining group due to: need to re-join with the given member-id: consumer-notification-service-2-5526a9a0-c218-4aae-95ff-64b9260014dc
+2026-04-22T20:10:52.706+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Request joining group due to: need to re-join with the given member-id: consumer-notification-service-1-90e91efe-dd7d-417b-9641-c7ff01b2f6ee
+2026-04-22T20:10:52.706+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Request joining group due to: need to re-join with the given member-id: consumer-notification-service-3-6f493b81-8a50-46e9-92a8-97d72304b519
+2026-04-22T20:10:52.707+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2026-04-22T20:10:52.707+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] (Re-)joining group
+2026-04-22T20:10:52.707+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2026-04-22T20:10:52.707+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2026-04-22T20:10:52.707+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] (Re-)joining group
+2026-04-22T20:10:52.707+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] (Re-)joining group
+2026-04-22T20:11:20.408+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Successfully joined group with generation Generation{generationId=2, memberId='consumer-notification-service-3-6f493b81-8a50-46e9-92a8-97d72304b519', protocol='range'}
+2026-04-22T20:11:20.408+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Successfully joined group with generation Generation{generationId=2, memberId='consumer-notification-service-2-5526a9a0-c218-4aae-95ff-64b9260014dc', protocol='range'}
+2026-04-22T20:11:20.408+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Successfully joined group with generation Generation{generationId=2, memberId='consumer-notification-service-1-90e91efe-dd7d-417b-9641-c7ff01b2f6ee', protocol='range'}
+2026-04-22T20:11:20.417+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Finished assignment for group at generation 2: {consumer-notification-service-1-90e91efe-dd7d-417b-9641-c7ff01b2f6ee=Assignment(partitions=[velora.shipment.created.topic-0]), consumer-notification-service-2-5526a9a0-c218-4aae-95ff-64b9260014dc=Assignment(partitions=[velora.payment.success.topic-0]), consumer-notification-service-3-6f493b81-8a50-46e9-92a8-97d72304b519=Assignment(partitions=[velora.payment.failed.topic-0])}
+2026-04-22T20:11:20.422+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Successfully synced group in generation Generation{generationId=2, memberId='consumer-notification-service-2-5526a9a0-c218-4aae-95ff-64b9260014dc', protocol='range'}
+2026-04-22T20:11:20.422+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Successfully synced group in generation Generation{generationId=2, memberId='consumer-notification-service-3-6f493b81-8a50-46e9-92a8-97d72304b519', protocol='range'}
+2026-04-22T20:11:20.422+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Successfully synced group in generation Generation{generationId=2, memberId='consumer-notification-service-1-90e91efe-dd7d-417b-9641-c7ff01b2f6ee', protocol='range'}
+2026-04-22T20:11:20.422+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Notifying assignor about the new Assignment(partitions=[velora.payment.success.topic-0])
+2026-04-22T20:11:20.422+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Notifying assignor about the new Assignment(partitions=[velora.shipment.created.topic-0])
+2026-04-22T20:11:20.422+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Notifying assignor about the new Assignment(partitions=[velora.payment.failed.topic-0])
+2026-04-22T20:11:20.423+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Adding newly assigned partitions: velora.payment.failed.topic-0
+2026-04-22T20:11:20.423+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Adding newly assigned partitions: velora.payment.success.topic-0
+2026-04-22T20:11:20.423+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Adding newly assigned partitions: velora.shipment.created.topic-0
+2026-04-22T20:11:20.428+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Found no committed offset for partition velora.shipment.created.topic-0
+2026-04-22T20:11:20.428+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Found no committed offset for partition velora.payment.failed.topic-0
+2026-04-22T20:11:20.428+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Found no committed offset for partition velora.payment.success.topic-0
+2026-04-22T20:11:20.433+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Resetting offset for partition velora.shipment.created.topic-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-04-22T20:11:20.433+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-service: partitions assigned: [velora.shipment.created.topic-0]
+2026-04-22T20:11:20.436+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Resetting offset for partition velora.payment.failed.topic-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-04-22T20:11:20.436+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Resetting offset for partition velora.payment.success.topic-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-04-22T20:11:20.436+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-service: partitions assigned: [velora.payment.failed.topic-0]
+2026-04-22T20:11:20.436+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-service: partitions assigned: [velora.payment.success.topic-0]
+2026-04-22T20:11:20.478+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] c.e.n.c.ShipmentNotificationConsumer     : ============================================================
+NOTIFICATION CONSUMER - RECEIVE SHIPMENT CREATED
+============================================================
+Queue         : velora.shipment.created.topic
+Order ID      : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Customer      : Selvya
+Email         : selvya@mail.com
+Tracking No   : VLR72A60BBEDE
+Courier       : JNE
+============================================================
+
+2026-04-22T20:11:20.481+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] c.e.n.c.PaymentNotificationConsumer      : ============================================================
+NOTIFICATION CONSUMER - RECEIVE PAYMENT SUCCESS
+============================================================
+Queue          : velora.payment.success.topic
+Order ID       : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Customer       : Selvya
+Email          : selvya@mail.com
+Amount         : 507000.00
+Payment Status : SUCCESS
+============================================================
+
+2026-04-22T20:11:20.537+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] c.e.n.service.NotificationService        : ============================================================
+NOTIFICATION SERVICE - NOTIFICATION SAVED
+============================================================
+Notification ID: cc22e6de-a0f2-4b72-a4cd-412312c8eec1
+Order ID       : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Payment ID     : e7384e24-d5e4-4a8d-a40a-60784bc81741
+Shipment ID    : null
+Recipient      : selvya@mail.com
+Type           : PAYMENT_SUCCESS
+Status         : SENT
+Message        : Hi Selvya, payment for order 6a413b9e-657b-49ad-b60c-021f7c9e0dad berhasil. Pesanan sedang diproses.
+Created At     : 2026-04-22T20:11:20.481368
+============================================================
+
+2026-04-22T20:11:20.537+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] c.e.n.service.NotificationService        : ============================================================
+NOTIFICATION SERVICE - NOTIFICATION SAVED
+============================================================
+Notification ID: 4c18fb27-e95f-4fd7-a8eb-3a59804baf72
+Order ID       : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Payment ID     : null
+Shipment ID    : 5c58cb85-b847-4047-9af0-613db1c95e8f
+Recipient      : selvya@mail.com
+Type           : SHIPMENT_CREATED
+Status         : SENT
+Message        : Hi Selvya, shipment for order 6a413b9e-657b-49ad-b60c-021f7c9e0dad sudah dibuat. Courier: JNE, Tracking Number: VLR72A60BBEDE
+Created At     : 2026-04-22T20:11:20.478600
+============================================================
+
+2026-04-22T20:11:20.537+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] c.e.n.c.ShipmentNotificationConsumer     : ============================================================
+NOTIFICATION CONSUMER - RECEIVE SHIPMENT CREATED
+============================================================
+Queue         : velora.shipment.created.topic
+Order ID      : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Customer      : Selvya
+Email         : selvya@mail.com
+Tracking No   : VLR0DCBEE0D91
+Courier       : JNE
+============================================================
+
+2026-04-22T20:11:20.537+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] c.e.n.c.PaymentNotificationConsumer      : ============================================================
+NOTIFICATION CONSUMER - RECEIVE PAYMENT SUCCESS
+============================================================
+Queue          : velora.payment.success.topic
+Order ID       : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Customer       : Selvya
+Email          : selvya@mail.com
+Amount         : 507000.00
+Payment Status : SUCCESS
+============================================================
+
+2026-04-22T20:11:20.543+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] c.e.n.service.NotificationService        : ============================================================
+NOTIFICATION SERVICE - NOTIFICATION SAVED
+============================================================
+Notification ID: aab644c4-6d04-4908-825c-299492e52cfc
+Order ID       : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Payment ID     : null
+Shipment ID    : 1002a7c3-7676-4a8a-807e-c4416576dabb
+Recipient      : selvya@mail.com
+Type           : SHIPMENT_CREATED
+Status         : SENT
+Message        : Hi Selvya, shipment for order 15de8fea-7972-424f-8114-8b1f9497d9f7 sudah dibuat. Courier: JNE, Tracking Number: VLR0DCBEE0D91
+Created At     : 2026-04-22T20:11:20.537940
+============================================================
+
+2026-04-22T20:11:20.543+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] c.e.n.service.NotificationService        : ============================================================
+NOTIFICATION SERVICE - NOTIFICATION SAVED
+============================================================
+Notification ID: 4718c05d-b132-4700-b55e-f759b88a17a0
+Order ID       : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Payment ID     : e2ff7584-f1b7-488c-8940-8b6a7369459c
+Shipment ID    : null
+Recipient      : selvya@mail.com
+Type           : PAYMENT_SUCCESS
+Status         : SENT
+Message        : Hi Selvya, payment for order 15de8fea-7972-424f-8114-8b1f9497d9f7 berhasil. Pesanan sedang diproses.
+Created At     : 2026-04-22T20:11:20.537952
+============================================================
+
+2026-04-22T20:15:04.428+07:00  INFO 75516 --- [notification-service] [nio-8085-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-22T20:15:04.428+07:00  INFO 75516 --- [notification-service] [nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-22T20:15:04.429+07:00  INFO 75516 --- [notification-service] [nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-22T20:19:52.712+07:00  INFO 75516 --- [notification-service] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-service-3, groupId=notification-service] Node -1 disconnected.
+2026-04-22T20:19:52.909+07:00  INFO 75516 --- [notification-service] [ntainer#2-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-service-1, groupId=notification-service] Node -1 disconnected.
+2026-04-22T20:19:52.915+07:00  INFO 75516 --- [notification-service] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-service-2, groupId=notification-service] Node -1 disconnected.

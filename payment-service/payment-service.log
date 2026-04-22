@@ -1,0 +1,486 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.example:payment-service >---------------------
+[INFO] Building payment-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.5:run (default-cli) > test-compile @ payment-service >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ payment-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ payment-service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ payment-service ---
+[INFO] skip non existing resourceDirectory /Users/lfrd/Documents/velora-system/payment-service/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ payment-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.5:run (default-cli) < test-compile @ payment-service <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.5:run (default-cli) @ payment-service ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-04-22T20:10:17.047+07:00  INFO 75383 --- [payment-service] [           main] c.e.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 25.0.2 with PID 75383 (/Users/lfrd/Documents/velora-system/payment-service/target/classes started by lfrd in /Users/lfrd/Documents/velora-system/payment-service)
+2026-04-22T20:10:17.049+07:00  INFO 75383 --- [payment-service] [           main] c.e.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-04-22T20:10:17.400+07:00  INFO 75383 --- [payment-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-22T20:10:17.422+07:00  INFO 75383 --- [payment-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/Users/lfrd/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.20/tomcat-embed-core-10.1.20.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-04-22T20:10:17.744+07:00  INFO 75383 --- [payment-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2026-04-22T20:10:17.749+07:00  INFO 75383 --- [payment-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-22T20:10:17.749+07:00  INFO 75383 --- [payment-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-22T20:10:17.771+07:00  INFO 75383 --- [payment-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-22T20:10:17.771+07:00  INFO 75383 --- [payment-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 703 ms
+2026-04-22T20:10:17.901+07:00  INFO 75383 --- [payment-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-22T20:10:17.921+07:00  INFO 75383 --- [payment-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-04-22T20:10:17.934+07:00  INFO 75383 --- [payment-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-22T20:10:18.037+07:00  INFO 75383 --- [payment-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-22T20:10:18.049+07:00  INFO 75383 --- [payment-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-22T20:10:18.229+07:00  INFO 75383 --- [payment-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4bc21e34
+2026-04-22T20:10:18.230+07:00  INFO 75383 --- [payment-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-22T20:10:18.597+07:00  INFO 75383 --- [payment-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-22T20:10:18.626+07:00  INFO 75383 --- [payment-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-22T20:10:18.850+07:00  WARN 75383 --- [payment-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-22T20:10:19.134+07:00  INFO 75383 --- [payment-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-04-22T20:10:19.186+07:00  INFO 75383 --- [payment-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path ''
+2026-04-22T20:10:19.204+07:00  INFO 75383 --- [payment-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2026-04-22T20:10:19.273+07:00  INFO 75383 --- [payment-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages]' were supplied but are not used yet.
+2026-04-22T20:10:19.273+07:00  INFO 75383 --- [payment-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.2
+2026-04-22T20:10:19.273+07:00  INFO 75383 --- [payment-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: c4deed513057c94e
+2026-04-22T20:10:19.273+07:00  INFO 75383 --- [payment-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1776863419273
+2026-04-22T20:10:19.278+07:00  INFO 75383 --- [payment-service] [           main] fkaConsumerFactory$ExtendedKafkaConsumer : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Subscribed to topic(s): velora.order.topic
+2026-04-22T20:10:19.281+07:00  INFO 75383 --- [payment-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-service-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2026-04-22T20:10:19.283+07:00  INFO 75383 --- [payment-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages]' were supplied but are not used yet.
+2026-04-22T20:10:19.283+07:00  INFO 75383 --- [payment-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.2
+2026-04-22T20:10:19.283+07:00  INFO 75383 --- [payment-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: c4deed513057c94e
+2026-04-22T20:10:19.283+07:00  INFO 75383 --- [payment-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1776863419283
+2026-04-22T20:10:19.285+07:00  INFO 75383 --- [payment-service] [           main] fkaConsumerFactory$ExtendedKafkaConsumer : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Subscribed to topic(s): payment.order.created.dlq
+2026-04-22T20:10:19.294+07:00  INFO 75383 --- [payment-service] [           main] c.e.p.PaymentServiceApplication          : Started PaymentServiceApplication in 2.414 seconds (process running for 2.543)
+2026-04-22T20:10:19.412+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Cluster ID: NaeYGMN1Q7CXolG6VdH_gA
+2026-04-22T20:10:19.412+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Cluster ID: NaeYGMN1Q7CXolG6VdH_gA
+2026-04-22T20:10:19.412+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-04-22T20:10:19.412+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-04-22T20:10:19.413+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] (Re-)joining group
+2026-04-22T20:10:19.414+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] (Re-)joining group
+2026-04-22T20:10:19.423+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Request joining group due to: need to re-join with the given member-id: consumer-payment-service-1-b65fec84-d21b-4805-bab2-8f8844a3ad76
+2026-04-22T20:10:19.423+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Request joining group due to: need to re-join with the given member-id: consumer-payment-service-2-2cc83da9-7d1b-4f77-bf0d-5ef95f9a477e
+2026-04-22T20:10:19.423+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2026-04-22T20:10:19.423+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2026-04-22T20:10:19.423+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] (Re-)joining group
+2026-04-22T20:10:19.423+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] (Re-)joining group
+2026-04-22T20:10:22.431+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Successfully joined group with generation Generation{generationId=3, memberId='consumer-payment-service-2-2cc83da9-7d1b-4f77-bf0d-5ef95f9a477e', protocol='range'}
+2026-04-22T20:10:22.431+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Successfully joined group with generation Generation{generationId=3, memberId='consumer-payment-service-1-b65fec84-d21b-4805-bab2-8f8844a3ad76', protocol='range'}
+2026-04-22T20:10:22.440+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Finished assignment for group at generation 3: {consumer-payment-service-2-2cc83da9-7d1b-4f77-bf0d-5ef95f9a477e=Assignment(partitions=[payment.order.created.dlq-0]), consumer-payment-service-1-b65fec84-d21b-4805-bab2-8f8844a3ad76=Assignment(partitions=[velora.order.topic-0])}
+2026-04-22T20:10:22.446+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Successfully synced group in generation Generation{generationId=3, memberId='consumer-payment-service-1-b65fec84-d21b-4805-bab2-8f8844a3ad76', protocol='range'}
+2026-04-22T20:10:22.446+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Successfully synced group in generation Generation{generationId=3, memberId='consumer-payment-service-2-2cc83da9-7d1b-4f77-bf0d-5ef95f9a477e', protocol='range'}
+2026-04-22T20:10:22.446+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Notifying assignor about the new Assignment(partitions=[velora.order.topic-0])
+2026-04-22T20:10:22.446+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Notifying assignor about the new Assignment(partitions=[payment.order.created.dlq-0])
+2026-04-22T20:10:22.447+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Adding newly assigned partitions: velora.order.topic-0
+2026-04-22T20:10:22.447+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Adding newly assigned partitions: payment.order.created.dlq-0
+2026-04-22T20:10:22.452+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Found no committed offset for partition velora.order.topic-0
+2026-04-22T20:10:22.452+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Found no committed offset for partition payment.order.created.dlq-0
+2026-04-22T20:10:22.457+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Resetting offset for partition payment.order.created.dlq-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-04-22T20:10:22.457+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : payment-service: partitions assigned: [payment.order.created.dlq-0]
+2026-04-22T20:10:22.460+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Resetting offset for partition velora.order.topic-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-04-22T20:10:22.460+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : payment-service: partitions assigned: [velora.order.topic-0]
+============================================================
+PAYMENT CONSUMER - RECEIVE ORDER CREATED
+============================================================
+Queue         : velora.order.topic
+Order ID      : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Customer      : Selvya
+Amount        : 507000.00
+Payment Method: QRIS
+============================================================
+2026-04-22T20:10:22.502+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] c.e.p.service.PaymentService             : ============================================================
+PAYMENT SERVICE - START PROCESS PAYMENT
+============================================================
+Order ID      : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Customer      : Selvya
+Email         : selvya@mail.com
+Amount        : 507000.00
+Payment Method: QRIS
+Items         : [VLR-TSH-BLK-M x2, VLR-HOD-GRY-L x1]
+============================================================
+
+2026-04-22T20:10:22.622+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] c.e.p.service.PaymentService             : ============================================================
+PAYMENT SERVICE - PAYMENT SAVED
+============================================================
+Payment ID    : e7384e24-d5e4-4a8d-a40a-60784bc81741
+Order ID      : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Method        : QRIS
+Amount        : 507000.00
+Status        : SUCCESS
+Reason        : Payment completed
+Created At    : 2026-04-22T20:10:22.585869
+============================================================
+
+2026-04-22T20:10:22.626+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-04-22T20:10:22.630+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2026-04-22T20:10:22.634+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.2
+2026-04-22T20:10:22.635+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: c4deed513057c94e
+2026-04-22T20:10:22.635+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1776863422634
+2026-04-22T20:10:22.642+07:00  INFO 75383 --- [payment-service] [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: NaeYGMN1Q7CXolG6VdH_gA
+2026-04-22T20:10:22.643+07:00  INFO 75383 --- [payment-service] [ad | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1] ProducerId set to 1 with epoch 0
+2026-04-22T20:10:22.656+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] c.e.p.producer.PaymentResultProducer     : ============================================================
+PAYMENT SERVICE - PAYMENT SUCCESS PUBLISHED
+============================================================
+Exchange      : velora.payment.success.topic
+Routing Key   : <fanout>
+Order ID      : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+============================================================
+
+2026-04-22T20:10:22.656+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] c.e.p.service.PaymentService             : ============================================================
+PAYMENT SERVICE - RESULT PUBLISHED
+============================================================
+Order ID      : 6a413b9e-657b-49ad-b60c-021f7c9e0dad
+Routing Key   : payment.success
+Recipient     : selvya@mail.com
+============================================================
+
+============================================================
+PAYMENT CONSUMER - RECEIVE ORDER CREATED
+============================================================
+Queue         : velora.order.topic
+Order ID      : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Customer      : Selvya
+Amount        : 507000.00
+Payment Method: QRIS
+============================================================
+2026-04-22T20:10:22.657+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] c.e.p.service.PaymentService             : ============================================================
+PAYMENT SERVICE - START PROCESS PAYMENT
+============================================================
+Order ID      : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Customer      : Selvya
+Email         : selvya@mail.com
+Amount        : 507000.00
+Payment Method: QRIS
+Items         : [VLR-TSH-BLK-M x2, VLR-HOD-GRY-L x1]
+============================================================
+
+2026-04-22T20:10:22.669+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] c.e.p.service.PaymentService             : ============================================================
+PAYMENT SERVICE - PAYMENT SAVED
+============================================================
+Payment ID    : e2ff7584-f1b7-488c-8940-8b6a7369459c
+Order ID      : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Method        : QRIS
+Amount        : 507000.00
+Status        : SUCCESS
+Reason        : Payment completed
+Created At    : 2026-04-22T20:10:22.660261
+============================================================
+
+2026-04-22T20:10:22.670+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] c.e.p.producer.PaymentResultProducer     : ============================================================
+PAYMENT SERVICE - PAYMENT SUCCESS PUBLISHED
+============================================================
+Exchange      : velora.payment.success.topic
+Routing Key   : <fanout>
+Order ID      : 15de8fea-7972-424f-8114-8b1f9497d9f7
+============================================================
+
+2026-04-22T20:10:22.670+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] c.e.p.service.PaymentService             : ============================================================
+PAYMENT SERVICE - RESULT PUBLISHED
+============================================================
+Order ID      : 15de8fea-7972-424f-8114-8b1f9497d9f7
+Routing Key   : payment.success
+Recipient     : selvya@mail.com
+============================================================
+
+2026-04-22T20:11:23.995+07:00  INFO 75383 --- [payment-service] [nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-22T20:11:23.996+07:00  INFO 75383 --- [payment-service] [nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-22T20:11:23.998+07:00  INFO 75383 --- [payment-service] [nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-22T20:19:19.442+07:00  INFO 75383 --- [payment-service] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-payment-service-2, groupId=payment-service] Node -1 disconnected.
+2026-04-22T20:19:19.681+07:00  INFO 75383 --- [payment-service] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-payment-service-1, groupId=payment-service] Node -1 disconnected.
+2026-04-22T20:19:22.656+07:00  INFO 75383 --- [payment-service] [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
