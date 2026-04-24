@@ -1,5 +1,6 @@
 target/
-.dbclient/
-.vscode/
-.idea/
 *.log
+.idea/
+.vscode/
+*.iml
+.DS_Store
