@@ -1,18 +1,6 @@
 # 🛍️ Velora E-Commerce Microservices
 
-Velora adalah simulasi **fashion e-commerce berbasis microservices** untuk kebutuhan demo Enterprise Application Integration (EAI). Project ini sudah dirapikan agar bisa menunjukkan:
-
-- ✅ **Microservices** dengan service terpisah.
-- ✅ **Database per service**, bukan shared database tunggal.
-- ✅ **JWT Authentication** dan **role authorization**.
-- ✅ **OpenAPI/Swagger UI** di setiap service.
-- ✅ **Event-Driven Architecture** menggunakan Apache Kafka.
-- ✅ **Console log rapi** untuk bukti alur sukses dan gagal.
-- ✅ **Business failure** melalui `payment.failed` topic.
-- ✅ **Technical failure + DLQ** melalui Kafka Dead Letter Topic.
-- ✅ **Response validasi rapi** seperti materi dosen: `errors: [{ field, message }]`.
-- ✅ **Order ID rapi** seperti `ORD-2026-0001`.
-
+Velora adalah simulasi **fashion e-commerce berbasis microservices** untuk Enterprise Application Integration (EAI).
 ---
 
 ## 🧰 Tech Stack
