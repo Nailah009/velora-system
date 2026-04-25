@@ -824,7 +824,7 @@ velora.payment.success.topic.DLQ
 
 ---
 
-## 🗣️ Script Penjelasan Singkat Demo
+## 🗣️ Penjelasan Singkat 
 
 > Velora menggunakan arsitektur microservices dengan database terpisah per service. Auth-service menghasilkan JWT untuk autentikasi dan role authorization. Inventory-service mengelola produk dan stok. Order-service membuat order dan melakukan reserve stock melalui REST ke inventory-service. Setelah order dibuat, order-service mengirim event ke Kafka. Payment-service, shipping-service, dan notification-service memproses event secara asynchronous. Sistem juga menerapkan DLQ untuk menangani kegagalan teknis pada consumer, sehingga message gagal tidak hilang dan dapat dianalisis melalui topic DLQ.
 
