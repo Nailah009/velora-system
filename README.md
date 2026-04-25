@@ -824,26 +824,6 @@ velora.payment.success.topic.DLQ
 
 ---
 
-## 📸 Bukti Screenshot yang Disarankan
-
-1. `docker ps` menampilkan `velora-mysql`, `velora-kafka`, `velora-zookeeper`.
-2. Swagger login admin mendapat JWT.
-3. Swagger admin tambah produk berhasil.
-4. Swagger user register dan login berhasil.
-5. USER gagal tambah produk `403 Forbidden`.
-6. USER create order sukses dengan `order_id: ORD-2026-xxxx`.
-7. Swagger payment menampilkan status `PAID`.
-8. Swagger shipping menampilkan status `SHIPPED`.
-9. Swagger notification menampilkan notifikasi.
-10. Terminal sukses: order, inventory, payment, shipping, notification.
-11. Validasi gagal: response `errors[]`.
-12. Payment failed business: `paymentMethod: FAIL`.
-13. Payment DLQ: `paymentMethod: DLQ`.
-14. Shipping DLQ: `shippingAddress: FAIL-SHIPPING`.
-15. SQL `SHOW TABLES` untuk membuktikan database per service.
-
----
-
 ## 🗣️ Script Penjelasan Singkat Demo
 
 > Velora menggunakan arsitektur microservices dengan database terpisah per service. Auth-service menghasilkan JWT untuk autentikasi dan role authorization. Inventory-service mengelola produk dan stok. Order-service membuat order dan melakukan reserve stock melalui REST ke inventory-service. Setelah order dibuat, order-service mengirim event ke Kafka. Payment-service, shipping-service, dan notification-service memproses event secara asynchronous. Sistem juga menerapkan DLQ untuk menangani kegagalan teknis pada consumer, sehingga message gagal tidak hilang dan dapat dianalisis melalui topic DLQ.
