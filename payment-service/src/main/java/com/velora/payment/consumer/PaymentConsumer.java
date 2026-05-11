@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PaymentConsumer {
+
     private final PaymentService paymentService;
     private final ObjectMapper objectMapper;
 
@@ -16,26 +17,34 @@ public class PaymentConsumer {
         this.objectMapper = objectMapper;
     }
 
-    @KafkaListener(topics = "${app.kafka.topics.order-created}", groupId = "payment-service")
-    public void onOrderCreated(String message) throws Exception {
+    /**
+     * Core fix:
+     * Payment sekarang tidak langsung consume order-created.
+     * Payment baru jalan setelah inventory-service publish inventory-reserved.
+     */
+    @KafkaListener(topics = "${app.kafka.topics.inventory-reserved}", groupId = "payment-service")
+    public void onInventoryReserved(String message) throws Exception {
         JsonNode event = objectMapper.readTree(message);
         String orderId = event.get("orderId").asText();
         String paymentMethod = event.get("paymentMethod").asText();
 
         System.out.println("""
-                
-                ============================================================
-                PAYMENT CONSUMER - RECEIVE ORDER CREATED
-                ============================================================
-                Queue          : velora.order.topic
-                Order ID       : %s
-                Customer       : %s
-                Email          : %s
-                Amount         : %s
-                Payment Method : %s
-                Correlation ID : %s
-                ============================================================
-                """.formatted(
+        ============================================================
+        PAYMENT CONSUMER - RECEIVE INVENTORY RESERVED
+        ============================================================
+        Topic          : velora.inventory.reserved.topic
+        Saga ID        : %s
+        Order ID       : %s
+        Customer       : %s
+        Email          : %s
+        Amount         : %s
+        Payment Method : %s
+        Previous Step  : RESERVE_STOCK SUCCESS
+        Current Step   : PROCESS_PAYMENT
+        Correlation ID : %s
+        ============================================================
+        """.formatted(
+                event.has("sagaId") ? event.get("sagaId").asText() : "-",
                 orderId,
                 event.get("username").asText(),
                 event.get("email").asText(),
@@ -46,19 +55,16 @@ public class PaymentConsumer {
 
         if ("DLQ".equalsIgnoreCase(paymentMethod)) {
             System.out.println("""
-                    
-                    ============================================================
-                    PAYMENT CONSUMER - GAGAL PROSES ORDER
-                    ============================================================
-                    Order ID       : %s
-                    Customer       : %s
-                    Reason         : Forced technical failure for DLQ testing
-                    Action         : Throw exception, retry, then send to DLQ
-                    ============================================================
-                    """.formatted(
-                    orderId,
-                    event.get("username").asText()
-            ));
+            ============================================================
+            PAYMENT CONSUMER - GAGAL PROSES PAYMENT
+            ============================================================
+            Order ID : %s
+            Customer : %s
+            Reason   : Forced technical failure for DLQ testing
+            Action   : Throw exception, retry, then send to DLQ
+            ============================================================
+            """.formatted(orderId, event.get("username").asText()));
+
             throw new RuntimeException("Forced DLQ test from payment consumer for orderId=" + orderId);
         }
 

@@ -8,12 +8,30 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OrderEventConsumer {
+
     private final ObjectMapper objectMapper;
     private final OrderService orderService;
 
     public OrderEventConsumer(ObjectMapper objectMapper, OrderService orderService) {
         this.objectMapper = objectMapper;
         this.orderService = orderService;
+    }
+
+    @KafkaListener(topics = "${app.kafka.topics.inventory-reserved}", groupId = "order-service-inventory-reserved")
+    public void onInventoryReserved(String message) throws Exception {
+        JsonNode event = objectMapper.readTree(message);
+        Long orderId = event.get("orderId").asLong();
+        orderService.markInventoryReserved(event);
+        printStatusUpdate("ORDER SERVICE - RECEIVE INVENTORY RESERVED", orderId, "PENDING_PAYMENT", event);
+    }
+
+    @KafkaListener(topics = "${app.kafka.topics.inventory-failed}", groupId = "order-service-inventory-failed")
+    public void onInventoryFailed(String message) throws Exception {
+        JsonNode event = objectMapper.readTree(message);
+        Long orderId = event.get("orderId").asLong();
+        String reason = event.has("reason") ? event.get("reason").asText() : "Inventory reservation failed";
+        orderService.markInventoryFailed(orderId, reason);
+        printStatusUpdate("ORDER SERVICE - RECEIVE INVENTORY FAILED", orderId, "INVENTORY_FAILED", event);
     }
 
     @KafkaListener(topics = "${app.kafka.topics.payment-success}", groupId = "order-service-payment-success")
@@ -50,20 +68,21 @@ public class OrderEventConsumer {
 
     private void printStatusUpdate(String title, Long orderId, String newStatus, JsonNode event) {
         System.out.println("""
-                
-                ============================================================
-                %s
-                ============================================================
-                Order ID       : %s
-                New Status     : %s
-                Event Status   : %s
-                Correlation ID : %s
-                ============================================================
-                """.formatted(
+        ============================================================
+        %s
+        ============================================================
+        Order ID       : %s
+        New Status     : %s
+        Event Status   : %s
+        Saga ID        : %s
+        Correlation ID : %s
+        ============================================================
+        """.formatted(
                 title,
                 orderId,
                 newStatus,
                 event.has("status") ? event.get("status").asText() : "-",
+                event.has("sagaId") ? event.get("sagaId").asText() : "-",
                 event.has("correlationId") ? event.get("correlationId").asText() : "-"
         ));
     }
